@@ -17,6 +17,7 @@ const checkEnv = async () => {
 checkEnv()
 
 const configSchema = z.object({
+  PORT: z.coerce.number().default(4000),
   DATABASE_URL: z.string(),
   ACCESS_TOKEN_SECRET: z.string(),
   ACCESS_TOKEN_EXPIRES_IN: z.string(),
@@ -38,7 +39,7 @@ if (!configServer.success) {
   throw new Error('Các giá trị khai báo trong file .env không hợp lệ')
 }
 const envConfig = configServer.data
-export const API_URL = `${envConfig.PROTOCOL}://${envConfig.DOMAIN}`
+export const API_URL = `${envConfig.PROTOCOL}://${envConfig.DOMAIN}:${envConfig.PORT}`
 export default envConfig
 
 declare global {
