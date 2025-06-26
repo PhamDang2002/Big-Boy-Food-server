@@ -49,7 +49,7 @@ const start = async () => {
     fastify.register(errorHandlerPlugin)
     fastify.register(fastifySocketIO, {
       cors: {
-        origin: 'http://localhost:3000'
+        origin: 'https://big-boy-food-server.onrender.com'
       }
     })
     fastify.register(socketPlugin)
