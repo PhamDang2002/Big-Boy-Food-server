@@ -49,7 +49,7 @@ const start = async () => {
     fastify.register(errorHandlerPlugin)
     fastify.register(fastifySocketIO, {
       cors: {
-        origin: 'https://big-boy-food.vercel.app'
+        origin: 'http://localhost:3000'
       }
     })
     fastify.register(socketPlugin)
@@ -82,7 +82,7 @@ const start = async () => {
     })
     await initOwnerAccount()
     await fastify.listen({
-      host: '0.0.0.0'
+      port: envConfig.PORT
     })
     console.log(`Server đang chạy: ${API_URL}`)
   } catch (err) {
