@@ -32,7 +32,7 @@ const start = async () => {
     createFolder(path.resolve(envConfig.UPLOAD_FOLDER))
     const whitelist = ['*']
     fastify.register(cors, {
-      origin: whitelist, // Cho phép tất cả các domain gọi API
+      origin: ['https://big-boy-food.vercel.app'],
       credentials: true // Cho phép trình duyệt gửi cookie đến server
     })
 
@@ -49,7 +49,9 @@ const start = async () => {
     fastify.register(errorHandlerPlugin)
     fastify.register(fastifySocketIO, {
       cors: {
-        origin: 'https://big-boy-food-server.onrender.com'
+        origin: ['https://big-boy-food.vercel.app'],
+        methods: ['GET', 'POST'],
+        credentials: true
       }
     })
     fastify.register(socketPlugin)
