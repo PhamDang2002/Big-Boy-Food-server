@@ -39,9 +39,9 @@ Muốn xem thông tin database, chỉ cần mở Prisma Studio lên bằng câu 
 npx prisma studio
 ```
 
-Nó sẽ chạy ở url [http://localhost:5555](http://localhost:5555)
+Nó sẽ chạy ở url [http://big-boy-food-server.onrender.com:5555](http://big-boy-food-server.onrender.com:5555)
 
-Trong source code có chứa file `.env` để config, trong file này bạn có thể đổi port cho API backend, mặc định là port `4000`
+Trong source code có chứa file `.env` để config, trong file này bạn có thể đổi port cho API backend, mặc định là port `10000`
 
 Khi upload thì hình ảnh sẽ được đi vào thư mục `/uploads` trong folder `server`
 
@@ -58,7 +58,7 @@ Khi upload thì hình ảnh sẽ được đi vào thư mục `/uploads` trong f
     "name": "Iphone 11",
     "price": 20000000,
     "description": "Mô tả cho iphone 11",
-    "image": "http://localhost:4000/static/bec024f9ea534b7fbf078cb5462b30aa.jpg",
+    "image": "http://big-boy-food-server.onrender.com:10000/static/bec024f9ea534b7fbf078cb5462b30aa.jpg",
     "createdAt": "2024-03-11T03:51:14.028Z",
     "updatedAt": "2024-03-11T03:51:14.028Z"
   },
@@ -99,7 +99,7 @@ Trong trường hợp lỗi khác, server sẽ trả về lỗi trong trường 
 
 ## Chi tiết các API
 
-Mặc định API sẽ chạy ở địa chỉ [http://localhost:4000](http://localhost:4000), các bạn nào muốn đổi port thì vào file `.env` để thay đổi port
+Mặc định API sẽ chạy ở địa chỉ [http://big-boy-food-server.onrender.com:10000](http://big-boy-food-server.onrender.com:10000), các bạn nào muốn đổi port thì vào file `.env` để thay đổi port
 
 Với các API POST, PUT thông thường thì body gửi lên phải là JSON, và phải có header `Content-Type: application/json`.
 
@@ -121,7 +121,7 @@ API xác thực người dùng thông qua session token, session token này là 
 
 > Hiện tại thì chưa có file collection Postman, khi nào mình quay xong khóa học mình sẽ update lên nhé
 
-Mình có lưu 1 file là `NextJs Free API.postman_collection.json` trong thư mục `server`, các bạn chỉ cần import file này vào Postman là có ngay collection của mình. Tiếp theo các bạn tạo 1 environment mới, và set biến `host` là `http://localhost:4000`, và chọn environment này khi gọi API là xong.
+Mình có lưu 1 file là `NextJs Free API.postman_collection.json` trong thư mục `server`, các bạn chỉ cần import file này vào Postman là có ngay collection của mình. Tiếp theo các bạn tạo 1 environment mới, và set biến `host` là `http://big-boy-food-server.onrender.com:10000`, và chọn environment này khi gọi API là xong.
 
 ## Tài khoản mặc định
 
